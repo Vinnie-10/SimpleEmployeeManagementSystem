@@ -20,7 +20,7 @@ export class EmployeesService {
             VALUES (?, ?, ?, ?, ?, ?)`, 
             [department_id, name, email, phone_number, address, position]) as any;
         return {
-            message: `${name} with has successfully be registered to the database!`, 
+            message: `${name} has successfully be registered to the database!`, 
             id: result.insertId}
     }
 
