@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@n
 import { EmployeesService } from './employees.service';
 import { CreateEmployeeDTO } from './dto/createEmployee.dto';
 import { UpdateEmployeeDTO } from './dto/updateEmployee.dto';
-import { JWTAuthGuard } from 'src/guard/jwt.guard';
+import { JWTAuthGuard } from '../guard/jwt.guard';
 import { ApiBearerAuth } from '@nestjs/swagger';
 
 @ApiBearerAuth()

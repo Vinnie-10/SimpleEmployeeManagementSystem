@@ -1,5 +1,5 @@
 import { ConflictException, Injectable, NotFoundException } from '@nestjs/common';
-import pool from 'src/database/db';
+import pool from '../database/db';
 
 @Injectable()
 export class DepartmentsService {

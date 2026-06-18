@@ -16,10 +16,12 @@ export class EmployeesService {
         if (dept.length === 0){
             throw new NotFoundException(`There is no department with ID ${department_id}`)
         }
-        await pool.execute(`INSERT INTO employee (department_id, name, email, phone_number, address, position) 
+        const [result] = await pool.execute(`INSERT INTO employee (department_id, name, email, phone_number, address, position) 
             VALUES (?, ?, ?, ?, ?, ?)`, 
-            [department_id, name, email, phone_number, address, position]);
-        return `${name} has successfully be registered to the database!`
+            [department_id, name, email, phone_number, address, position]) as any;
+        return {
+            message: `${name} with has successfully be registered to the database!`, 
+            id: result.insertId}
     }
 
     async getEmployee(){
@@ -59,7 +61,15 @@ export class EmployeesService {
                 address = COALESCE(?, address),
                 position = COALESCE(?, position)
             WHERE id = ?`, 
-            [department_id, name, email, phone_number, address, position, id] as any);
+            [
+                department_id ?? null,
+                name ?? null,
+                email ?? null,
+                phone_number ?? null,
+                address ?? null,
+                position ?? null,
+                id,
+            ]);
         return { 
             message: `Employee with ID ${id} has successfully be updated.`
         }

@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
 import { DepartmentsService } from './departments.service';
 import { DepartmentDTO } from './dto/dept.dto';
-import { JWTAuthGuard } from 'src/guard/jwt.guard';
+import { JWTAuthGuard } from '../guard/jwt.guard';
 import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('departments')
