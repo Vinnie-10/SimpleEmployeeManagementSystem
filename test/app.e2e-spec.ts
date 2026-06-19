@@ -61,7 +61,7 @@ describe('AppController (e2e)', () => {
       await request(app.getHttpServer())
         .post('/auth/regist')
         .set('Authorization', `Bearer ${BossToken}`)
-        .send({ name: 'New HR', email: `newhr${Date.now()}@ems.com`, password: 'newhr123', role: 'HR' })
+        .send({ name: 'New HR', email: `newhr@ems.com`, password: 'newhr123', role: 'HR' })
         .expect(201);
     })
 
@@ -118,7 +118,7 @@ describe('AppController (e2e)', () => {
             .send({
                 department_id: 1,
                 name: 'Test',
-                email: `delete1${Date.now()}@ems.com`,
+                email: `delete1@ems.com`,
                 phone_number: '08123456789',
                 address: 'Bandung',
                 position: 'Intern',
@@ -138,7 +138,7 @@ describe('AppController (e2e)', () => {
             .send({
                 department_id: 1,
                 name: 'Test',
-                email: `delete2${Date.now()}@ems.com`,
+                email: `delete2@ems.com`,
                 phone_number: '08123456789',
                 address: 'Bandung',
                 position: 'Intern',
@@ -173,7 +173,7 @@ describe('AppController (e2e)', () => {
           .send({
               department_id: 1,
               name: 'Test Employee',
-              email: `test1${Date.now()}@ems.com`,
+              email: `test1@ems.com`,
               phone_number: '08123456789',
               address: 'Jakarta',
               position: 'Staff',
@@ -194,7 +194,7 @@ describe('AppController (e2e)', () => {
           .send({
               department_id: 1,
               name: 'Test Employee',
-              email: `test2${Date.now()}@ems.com`,
+              email: `test2@ems.com`,
               phone_number: '08123456789',
               address: 'Jakarta',
               position: 'Staff',
